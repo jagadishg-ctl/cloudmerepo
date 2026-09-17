@@ -1,6 +1,11 @@
 terraform {
   required_version = ">= 1.13.0"
 
+  backend "gcs" {
+    bucket = "cloudme-508910-tfstate"
+    prefix = "terraform/cloudmerepo"
+  }
+
   required_providers {
     google = {
       source  = "hashicorp/google"
